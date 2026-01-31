@@ -25,7 +25,7 @@ app.use(cors({
   origin: function (origin, callback) {
     // List of allowed origins
     const allowedOrigins = [
-      'https://ai-counsellor-ws82.onrender.com',
+      'https://ai-counsellor-3ccp.vercel.app',
       'http://localhost:3000',
       'http://localhost:5173', // Vite dev server
       // Add other domains as needed
