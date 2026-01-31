@@ -11,6 +11,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.set("trust proxy", 1);
+app.use((req, res, next) => {
+  res.setHeader("Cache-Control", "no-store");
+  next();
+});
+
 
 const allowedOrigins = [
   "https://ai-counsellor-3ccp.vercel.app",
