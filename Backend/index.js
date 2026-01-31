@@ -12,10 +12,24 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: true,
+  origin: function (origin, callback) {
+    // List of allowed origins
+    const allowedOrigins = [
+      'https://ai-counsellor-ws82.onrender.com',
+      'http://localhost:3000',
+      'http://localhost:5173', // Vite dev server
+      // Add other domains as needed
+    ];
+
+    // Allow requests with no origin (like mobile apps, curl, etc.)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
-
 app.use(express.json());
 app.use(cookieParser());
 
