@@ -12,14 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Add this after the CORS middleware
-app.use((req, res, next) => {
-  res.on('finish', () => {
-    console.log('CORS Headers set for response:');
-    console.log('Access-Control-Allow-Origin:', res.getHeader('Access-Control-Allow-Origin'));
-    console.log('Access-Control-Allow-Credentials:', res.getHeader('Access-Control-Allow-Credentials'));
-  });
-  next();
-});
+
 
 app.use(cors({
   origin: function (origin, callback) {
@@ -41,7 +34,14 @@ app.use(cors({
   credentials: true
 }));
 
-
+app.use((req, res, next) => {
+  res.on('finish', () => {
+    console.log('CORS Headers set for response:');
+    console.log('Access-Control-Allow-Origin:', res.getHeader('Access-Control-Allow-Origin'));
+    console.log('Access-Control-Allow-Credentials:', res.getHeader('Access-Control-Allow-Credentials'));
+  });
+  next();
+});
 
 
 app.use(express.json());
