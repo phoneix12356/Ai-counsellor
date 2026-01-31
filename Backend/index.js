@@ -1,12 +1,12 @@
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import router from "./routes/index.js";
 import prisma from "./config/dbConnect.js";
 import GlobalExceptionalHandler from "./exceptions/GlobalExceptionalHandler.js";
 
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
