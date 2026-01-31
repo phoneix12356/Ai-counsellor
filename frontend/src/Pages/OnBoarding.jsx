@@ -338,7 +338,7 @@ const OnBoarding = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Education Level */}
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-slate-700">
+                <label className="text-sm font-semibold text-gray-300">
                   Current Education Level *
                 </label>
                 <select
@@ -349,20 +349,20 @@ const OnBoarding = () => {
                   className={cn(
                     "w-full p-4 border rounded-2xl focus:ring-2 outline-none transition-all",
                     getFieldStatus("educationLevel") === "error"
-                      ? "border-red-300 bg-red-50 focus:ring-red-500"
+                      ? "border-red-500 bg-red-900/20 focus:ring-red-500"
                       : getFieldStatus("educationLevel") === "success"
-                        ? "border-green-300 bg-green-50 focus:ring-green-500"
-                        : "bg-slate-50 border-slate-200 focus:ring-indigo-500"
+                        ? "border-green-500 bg-green-900/20 focus:ring-green-500"
+                        : "bg-gray-800 border-gray-700 focus:ring-purple-500 text-white"
                   )}
                 >
-                  <option value="">Select Level</option>
-                  <option value="high-school">High School</option>
-                  <option value="bachelors">Bachelor's Degree</option>
-                  <option value="masters">Master's Degree</option>
-                  <option value="phd">PhD</option>
+                  <option value="" className="bg-gray-900">Select Level</option>
+                  <option value="high-school" className="bg-gray-900">High School</option>
+                  <option value="bachelors" className="bg-gray-900">Bachelor's Degree</option>
+                  <option value="masters" className="bg-gray-900">Master's Degree</option>
+                  <option value="phd" className="bg-gray-900">PhD</option>
                 </select>
                 {errors.educationLevel && (
-                  <div className="flex items-center gap-1 text-red-500 text-sm">
+                  <div className="flex items-center gap-1 text-red-400 text-sm">
                     <AlertCircle className="w-4 h-4" />
                     <span>{errors.educationLevel}</span>
                   </div>
@@ -371,7 +371,7 @@ const OnBoarding = () => {
 
               {/* Major */}
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-slate-700">
+                <label className="text-sm font-semibold text-gray-300">
                   Major / Degree *
                 </label>
                 <input
@@ -384,14 +384,14 @@ const OnBoarding = () => {
                   className={cn(
                     "w-full p-4 border rounded-2xl focus:ring-2 outline-none transition-all",
                     getFieldStatus("major") === "error"
-                      ? "border-red-300 bg-red-50 focus:ring-red-500"
+                      ? "border-red-500 bg-red-900/20 focus:ring-red-500"
                       : getFieldStatus("major") === "success"
-                        ? "border-green-300 bg-green-50 focus:ring-green-500"
-                        : "bg-slate-50 border-slate-200 focus:ring-indigo-500"
+                        ? "border-green-500 bg-green-900/20 focus:ring-green-500"
+                        : "bg-gray-800 border-gray-700 focus:ring-purple-500 text-white"
                   )}
                 />
                 {errors.major && (
-                  <div className="flex items-center gap-1 text-red-500 text-sm">
+                  <div className="flex items-center gap-1 text-red-400 text-sm">
                     <AlertCircle className="w-4 h-4" />
                     <span>{errors.major}</span>
                   </div>
@@ -400,7 +400,7 @@ const OnBoarding = () => {
 
               {/* Graduation Year */}
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-slate-700">
+                <label className="text-sm font-semibold text-gray-300">
                   Graduation Year *
                 </label>
                 <input
@@ -415,14 +415,14 @@ const OnBoarding = () => {
                   className={cn(
                     "w-full p-4 border rounded-2xl focus:ring-2 outline-none transition-all",
                     getFieldStatus("graduationYear") === "error"
-                      ? "border-red-300 bg-red-50 focus:ring-red-500"
+                      ? "border-red-500 bg-red-900/20 focus:ring-red-500"
                       : getFieldStatus("graduationYear") === "success"
-                        ? "border-green-300 bg-green-50 focus:ring-green-500"
-                        : "bg-slate-50 border-slate-200 focus:ring-indigo-500"
+                        ? "border-green-500 bg-green-900/20 focus:ring-green-500"
+                        : "bg-gray-800 border-gray-700 focus:ring-purple-500 text-white"
                   )}
                 />
                 {errors.graduationYear && (
-                  <div className="flex items-center gap-1 text-red-500 text-sm">
+                  <div className="flex items-center gap-1 text-red-400 text-sm">
                     <AlertCircle className="w-4 h-4" />
                     <span>{errors.graduationYear}</span>
                   </div>
@@ -431,7 +431,7 @@ const OnBoarding = () => {
 
               {/* GPA */}
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-slate-700">
+                <label className="text-sm font-semibold text-gray-300">
                   GPA / Percentage (Optional)
                 </label>
                 <div className="relative">
@@ -446,10 +446,10 @@ const OnBoarding = () => {
                     className={cn(
                       "w-full p-4 border rounded-2xl focus:ring-2 outline-none transition-all pr-10",
                       getFieldStatus("gpa") === "error"
-                        ? "border-red-300 bg-red-50 focus:ring-red-500"
+                        ? "border-red-500 bg-red-900/20 focus:ring-red-500"
                         : getFieldStatus("gpa") === "success"
-                          ? "border-green-300 bg-green-50 focus:ring-green-500"
-                          : "bg-slate-50 border-slate-200 focus:ring-indigo-500"
+                          ? "border-green-500 bg-green-900/20 focus:ring-green-500"
+                          : "bg-gray-800 border-gray-700 focus:ring-purple-500 text-white"
                     )}
                   />
                   {getFieldStatus("gpa") === "success" && (
@@ -457,12 +457,12 @@ const OnBoarding = () => {
                   )}
                 </div>
                 {errors.gpa && (
-                  <div className="flex items-center gap-1 text-red-500 text-sm">
+                  <div className="flex items-center gap-1 text-red-400 text-sm">
                     <AlertCircle className="w-4 h-4" />
                     <span>{errors.gpa}</span>
                   </div>
                 )}
-                <p className="text-xs text-slate-500 mt-1">
+                <p className="text-xs text-gray-500 mt-1">
                   Enter GPA on 4.0 scale or percentage (0-100)
                 </p>
               </div>
@@ -480,7 +480,7 @@ const OnBoarding = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Intended Degree */}
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-slate-700">
+                <label className="text-sm font-semibold text-gray-300">
                   Intended Degree *
                 </label>
                 <select
@@ -491,20 +491,20 @@ const OnBoarding = () => {
                   className={cn(
                     "w-full p-4 border rounded-2xl focus:ring-2 outline-none transition-all",
                     getFieldStatus("intendedDegree") === "error"
-                      ? "border-red-300 bg-red-50 focus:ring-red-500"
+                      ? "border-red-500 bg-red-900/20 focus:ring-red-500"
                       : getFieldStatus("intendedDegree") === "success"
-                        ? "border-green-300 bg-green-50 focus:ring-green-500"
-                        : "bg-slate-50 border-slate-200 focus:ring-indigo-500"
+                        ? "border-green-500 bg-green-900/20 focus:ring-green-500"
+                        : "bg-gray-800 border-gray-700 focus:ring-purple-500 text-white"
                   )}
                 >
-                  <option value="">Select Degree</option>
-                  <option value="bachelors">Bachelor's</option>
-                  <option value="masters">Master's</option>
-                  <option value="mba">MBA</option>
-                  <option value="phd">PhD</option>
+                  <option value="" className="bg-gray-900">Select Degree</option>
+                  <option value="bachelors" className="bg-gray-900">Bachelor's</option>
+                  <option value="masters" className="bg-gray-900">Master's</option>
+                  <option value="mba" className="bg-gray-900">MBA</option>
+                  <option value="phd" className="bg-gray-900">PhD</option>
                 </select>
                 {errors.intendedDegree && (
-                  <div className="flex items-center gap-1 text-red-500 text-sm">
+                  <div className="flex items-center gap-1 text-red-400 text-sm">
                     <AlertCircle className="w-4 h-4" />
                     <span>{errors.intendedDegree}</span>
                   </div>
@@ -513,7 +513,7 @@ const OnBoarding = () => {
 
               {/* Field of Study */}
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-slate-700">
+                <label className="text-sm font-semibold text-gray-300">
                   Field of Study *
                 </label>
                 <input
@@ -526,14 +526,14 @@ const OnBoarding = () => {
                   className={cn(
                     "w-full p-4 border rounded-2xl focus:ring-2 outline-none transition-all",
                     getFieldStatus("fieldOfStudy") === "error"
-                      ? "border-red-300 bg-red-50 focus:ring-red-500"
+                      ? "border-red-500 bg-red-900/20 focus:ring-red-500"
                       : getFieldStatus("fieldOfStudy") === "success"
-                        ? "border-green-300 bg-green-50 focus:ring-green-500"
-                        : "bg-slate-50 border-slate-200 focus:ring-indigo-500"
+                        ? "border-green-500 bg-green-900/20 focus:ring-green-500"
+                        : "bg-gray-800 border-gray-700 focus:ring-purple-500 text-white"
                   )}
                 />
                 {errors.fieldOfStudy && (
-                  <div className="flex items-center gap-1 text-red-500 text-sm">
+                  <div className="flex items-center gap-1 text-red-400 text-sm">
                     <AlertCircle className="w-4 h-4" />
                     <span>{errors.fieldOfStudy}</span>
                   </div>
@@ -542,7 +542,7 @@ const OnBoarding = () => {
 
               {/* Intake Year */}
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-slate-700">
+                <label className="text-sm font-semibold text-gray-300">
                   Target Intake Year *
                 </label>
                 <input
@@ -557,14 +557,14 @@ const OnBoarding = () => {
                   className={cn(
                     "w-full p-4 border rounded-2xl focus:ring-2 outline-none transition-all",
                     getFieldStatus("intakeYear") === "error"
-                      ? "border-red-300 bg-red-50 focus:ring-red-500"
+                      ? "border-red-500 bg-red-900/20 focus:ring-red-500"
                       : getFieldStatus("intakeYear") === "success"
-                        ? "border-green-300 bg-green-50 focus:ring-green-500"
-                        : "bg-slate-50 border-slate-200 focus:ring-indigo-500"
+                        ? "border-green-500 bg-green-900/20 focus:ring-green-500"
+                        : "bg-gray-800 border-gray-700 focus:ring-purple-500 text-white"
                   )}
                 />
                 {errors.intakeYear && (
-                  <div className="flex items-center gap-1 text-red-500 text-sm">
+                  <div className="flex items-center gap-1 text-red-400 text-sm">
                     <AlertCircle className="w-4 h-4" />
                     <span>{errors.intakeYear}</span>
                   </div>
@@ -573,7 +573,7 @@ const OnBoarding = () => {
 
               {/* Preferred Countries */}
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-slate-700">
+                <label className="text-sm font-semibold text-gray-300">
                   Preferred Countries *
                 </label>
                 <input
@@ -586,19 +586,19 @@ const OnBoarding = () => {
                   className={cn(
                     "w-full p-4 border rounded-2xl focus:ring-2 outline-none transition-all",
                     getFieldStatus("preferredCountries") === "error"
-                      ? "border-red-300 bg-red-50 focus:ring-red-500"
+                      ? "border-red-500 bg-red-900/20 focus:ring-red-500"
                       : getFieldStatus("preferredCountries") === "success"
-                        ? "border-green-300 bg-green-50 focus:ring-green-500"
-                        : "bg-slate-50 border-slate-200 focus:ring-indigo-500"
+                        ? "border-green-500 bg-green-900/20 focus:ring-green-500"
+                        : "bg-gray-800 border-gray-700 focus:ring-purple-500 text-white"
                   )}
                 />
                 {errors.preferredCountries && (
-                  <div className="flex items-center gap-1 text-red-500 text-sm">
+                  <div className="flex items-center gap-1 text-red-400 text-sm">
                     <AlertCircle className="w-4 h-4" />
                     <span>{errors.preferredCountries}</span>
                   </div>
                 )}
-                <p className="text-xs text-slate-500 mt-1">
+                <p className="text-xs text-gray-500 mt-1">
                   Enter comma-separated list of countries
                 </p>
               </div>
@@ -615,7 +615,7 @@ const OnBoarding = () => {
           >
             {/* Budget */}
             <div className="space-y-4">
-              <label className="text-sm font-semibold text-slate-700">
+              <label className="text-sm font-semibold text-gray-300">
                 Annual Budget Range (in USD) *
               </label>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -632,8 +632,8 @@ const OnBoarding = () => {
                     className={cn(
                       "p-4 rounded-2xl border text-sm font-bold transition-all flex flex-col items-center",
                       formData.budget === value
-                        ? "bg-indigo-600 border-indigo-600 text-white shadow-lg shadow-indigo-100"
-                        : "bg-white border-slate-200 text-slate-600 hover:border-indigo-300"
+                        ? "bg-purple-600 border-purple-600 text-white shadow-lg shadow-purple-900/30"
+                        : "bg-gray-800 border-gray-700 text-gray-300 hover:border-purple-500"
                     )}
                   >
                     {label}
@@ -644,7 +644,7 @@ const OnBoarding = () => {
                 ))}
               </div>
               {errors.budget && (
-                <div className="flex items-center gap-1 text-red-500 text-sm">
+                <div className="flex items-center gap-1 text-red-400 text-sm">
                   <AlertCircle className="w-4 h-4" />
                   <span>{errors.budget}</span>
                 </div>
@@ -653,7 +653,7 @@ const OnBoarding = () => {
 
             {/* Funding Plan */}
             <div className="space-y-4">
-              <label className="text-sm font-semibold text-slate-700">
+              <label className="text-sm font-semibold text-gray-300">
                 Funding Plan *
               </label>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -665,8 +665,8 @@ const OnBoarding = () => {
                     className={cn(
                       "p-4 rounded-2xl border text-sm font-bold transition-all flex items-center justify-center gap-2",
                       formData.fundingPlan === plan
-                        ? "bg-indigo-600 border-indigo-600 text-white shadow-lg shadow-indigo-100"
-                        : "bg-white border-slate-200 text-slate-600 hover:border-indigo-300"
+                        ? "bg-purple-600 border-purple-600 text-white shadow-lg shadow-purple-900/30"
+                        : "bg-gray-800 border-gray-700 text-gray-300 hover:border-purple-500"
                     )}
                   >
                     {plan}
@@ -677,7 +677,7 @@ const OnBoarding = () => {
                 ))}
               </div>
               {errors.fundingPlan && (
-                <div className="flex items-center gap-1 text-red-500 text-sm">
+                <div className="flex items-center gap-1 text-red-400 text-sm">
                   <AlertCircle className="w-4 h-4" />
                   <span>{errors.fundingPlan}</span>
                 </div>
@@ -696,23 +696,23 @@ const OnBoarding = () => {
             <div className="grid grid-cols-1 gap-6">
               {/* English Test Status */}
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-slate-700">
+                <label className="text-sm font-semibold text-gray-300">
                   IELTS / TOEFL Status
                 </label>
                 <select
                   value={formData.testStatus}
                   onChange={(e) => updateField("testStatus", e.target.value)}
-                  className="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+                  className="w-full p-4 bg-gray-800 border border-gray-700 rounded-2xl focus:ring-2 focus:ring-purple-500 outline-none transition-all text-white"
                 >
-                  <option value="not-started">Not Started</option>
-                  <option value="booked">Booked / Scheduled</option>
-                  <option value="completed">Completed with Score</option>
+                  <option value="not-started" className="bg-gray-900">Not Started</option>
+                  <option value="booked" className="bg-gray-900">Booked / Scheduled</option>
+                  <option value="completed" className="bg-gray-900">Completed with Score</option>
                 </select>
               </div>
 
               {/* GRE Status */}
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-slate-700">
+                <label className="text-sm font-semibold text-gray-300">
                   GRE / GMAT Status
                 </label>
                 <select
@@ -726,19 +726,19 @@ const OnBoarding = () => {
                       setErrors(newErrors);
                     }
                   }}
-                  className="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+                  className="w-full p-4 bg-gray-800 border border-gray-700 rounded-2xl focus:ring-2 focus:ring-purple-500 outline-none transition-all text-white"
                 >
-                  <option value="not-required">Not Required</option>
-                  <option value="not-started">Not Started</option>
-                  <option value="studying">Studying / Preparing</option>
-                  <option value="completed">Completed with Score</option>
+                  <option value="not-required" className="bg-gray-900">Not Required</option>
+                  <option value="not-started" className="bg-gray-900">Not Started</option>
+                  <option value="studying" className="bg-gray-900">Studying / Preparing</option>
+                  <option value="completed" className="bg-gray-900">Completed with Score</option>
                 </select>
               </div>
 
               {/* GRE Score - Conditionally shown */}
               {formData.greStatus === 'completed' && (
                 <div className="space-y-2">
-                  <label className="text-sm font-semibold text-slate-700">
+                  <label className="text-sm font-semibold text-gray-300">
                     GRE Score (Optional)
                   </label>
                   <input
@@ -752,14 +752,14 @@ const OnBoarding = () => {
                     className={cn(
                       "w-full p-4 border rounded-2xl focus:ring-2 outline-none transition-all",
                       getFieldStatus("greScore") === "error"
-                        ? "border-red-300 bg-red-50 focus:ring-red-500"
+                        ? "border-red-500 bg-red-900/20 focus:ring-red-500"
                         : getFieldStatus("greScore") === "success"
-                          ? "border-green-300 bg-green-50 focus:ring-green-500"
-                          : "bg-slate-50 border-slate-200 focus:ring-indigo-500"
+                          ? "border-green-500 bg-green-900/20 focus:ring-green-500"
+                          : "bg-gray-800 border-gray-700 focus:ring-purple-500 text-white"
                     )}
                   />
                   {errors.greScore && (
-                    <div className="flex items-center gap-1 text-red-500 text-sm">
+                    <div className="flex items-center gap-1 text-red-400 text-sm">
                       <AlertCircle className="w-4 h-4" />
                       <span>{errors.greScore}</span>
                     </div>
@@ -769,18 +769,18 @@ const OnBoarding = () => {
 
               {/* SOP Status */}
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-slate-700">
+                <label className="text-sm font-semibold text-gray-300">
                   Statement of Purpose (SOP) Status
                 </label>
                 <select
                   value={formData.sopStatus}
                   onChange={(e) => updateField("sopStatus", e.target.value)}
-                  className="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+                  className="w-full p-4 bg-gray-800 border border-gray-700 rounded-2xl focus:ring-2 focus:ring-purple-500 outline-none transition-all text-white"
                 >
-                  <option value="not-started">Not Started</option>
-                  <option value="draft">Draft / In Progress</option>
-                  <option value="review">Under Review</option>
-                  <option value="ready">Finalized & Ready</option>
+                  <option value="not-started" className="bg-gray-900">Not Started</option>
+                  <option value="draft" className="bg-gray-900">Draft / In Progress</option>
+                  <option value="review" className="bg-gray-900">Under Review</option>
+                  <option value="ready" className="bg-gray-900">Finalized & Ready</option>
                 </select>
               </div>
             </div>
@@ -789,10 +789,10 @@ const OnBoarding = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-2xl"
+              className="mt-8 p-4 bg-blue-900/20 border border-blue-800 rounded-2xl"
             >
-              <h4 className="font-semibold text-blue-800 mb-2">Ready to Submit?</h4>
-              <p className="text-sm text-blue-700">
+              <h4 className="font-semibold text-blue-400 mb-2">Ready to Submit?</h4>
+              <p className="text-sm text-blue-300">
                 All fields marked with * are required. Your profile will be analyzed by AI to provide personalized recommendations.
               </p>
             </motion.div>
@@ -816,28 +816,28 @@ const OnBoarding = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50 flex flex-col items-center justify-center p-4 relative overflow-hidden">
+    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-4 relative overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-indigo-100/30 blur-[120px] rounded-full -z-10" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-purple-900/10 blur-[120px] rounded-full -z-10" />
 
       {/* Header */}
-      <header className="fixed top-0 w-full bg-white/90 backdrop-blur-xl border-b border-slate-200/50 z-50">
+      <header className="fixed top-0 w-full bg-gray-900/90 backdrop-blur-xl border-b border-gray-800 z-50">
         <div className="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <div className="bg-indigo-600 p-2 rounded-xl">
+            <div className="bg-gradient-to-br from-purple-600 to-blue-600 p-2 rounded-xl">
               <Compass className="text-white w-5 h-5" />
             </div>
-            <span className="font-bold text-slate-800">Onboarding</span>
+            <span className="font-bold text-white">Onboarding</span>
           </div>
 
           {/* Progress Indicator */}
           <div className="flex items-center gap-3">
-            <div className="text-xs text-slate-500 font-medium">
+            <div className="text-xs text-gray-400 font-medium">
               {calculateCompletion()}% Complete
             </div>
-            <div className="w-32 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div className="w-32 h-2 bg-gray-800 rounded-full overflow-hidden">
               <div
-                className="h-full bg-indigo-600 rounded-full transition-all duration-500"
+                className="h-full bg-gradient-to-r from-purple-600 to-pink-600 rounded-full transition-all duration-500"
                 style={{ width: `${calculateCompletion()}%` }}
               />
             </div>
@@ -852,19 +852,19 @@ const OnBoarding = () => {
             id="submit-error"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-4 p-4 bg-red-50 border border-red-200 rounded-2xl"
+            className="mb-4 p-4 bg-red-900/20 border border-red-800 rounded-2xl"
           >
-            <div className="flex items-center gap-2 text-red-700">
+            <div className="flex items-center gap-2 text-red-400">
               <AlertCircle className="w-5 h-5" />
               <span className="font-medium">Submission Error</span>
             </div>
-            <p className="text-sm text-red-600 mt-1">{submitError}</p>
+            <p className="text-sm text-red-300 mt-1">{submitError}</p>
           </motion.div>
         )}
 
         <motion.div
           layout
-          className="bg-white rounded-3xl border border-slate-100 shadow-2xl shadow-indigo-100/30 p-8 md:p-12"
+          className="bg-gray-900 rounded-3xl border border-gray-800 shadow-2xl shadow-purple-900/30 p-8 md:p-12"
         >
           {/* Progress Steps */}
           <div className="mb-12">
@@ -873,23 +873,29 @@ const OnBoarding = () => {
                 <div key={step.id} className="flex flex-col items-center gap-2 relative">
                   <div className={cn(
                     "w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 relative",
-                    currentStep >= idx ? "bg-indigo-600 text-white" : "bg-slate-100 text-slate-400"
+                    currentStep >= idx
+                      ? "bg-gradient-to-br from-purple-600 to-pink-600 text-white"
+                      : "bg-gray-800 text-gray-400"
                   )}>
                     <step.icon className="w-5 h-5" />
                     {idx < currentStep && (
-                      <CheckCircle className="absolute -top-1 -right-1 w-5 h-5 text-green-500 bg-white rounded-full" />
+                      <CheckCircle className="absolute -top-1 -right-1 w-5 h-5 text-green-500 bg-gray-900 rounded-full" />
                     )}
                   </div>
                   <span className={cn(
                     "text-[10px] uppercase tracking-wider font-bold text-center",
-                    currentStep === idx ? "text-indigo-600" : "text-slate-400"
+                    currentStep === idx
+                      ? "bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
+                      : "text-gray-400"
                   )}>
                     {step.title}
                   </span>
                   {idx < STEPS.length - 1 && (
                     <div className={cn(
                       "absolute top-5 left-12 w-16 h-0.5 hidden md:block",
-                      currentStep > idx ? "bg-indigo-600" : "bg-slate-100"
+                      currentStep > idx
+                        ? "bg-gradient-to-r from-purple-600 to-pink-600"
+                        : "bg-gray-800"
                     )} />
                   )}
                 </div>
@@ -900,10 +906,10 @@ const OnBoarding = () => {
           {/* Step Content */}
           <div className="min-h-[300px]">
             <div className="mb-8">
-              <h2 className="text-2xl font-black text-slate-900 mb-2">
+              <h2 className="text-2xl font-black text-white mb-2">
                 {STEPS[currentStep].title}
               </h2>
-              <p className="text-slate-500 text-sm">
+              <p className="text-gray-400 text-sm">
                 {STEPS[currentStep].id === "academic" && "Tell us about your academic background"}
                 {STEPS[currentStep].id === "goal" && "Define your study abroad goals"}
                 {STEPS[currentStep].id === "budget" && "Plan your financial strategy"}
@@ -917,7 +923,7 @@ const OnBoarding = () => {
           </div>
 
           {/* Navigation */}
-          <div className="flex justify-between items-center mt-12 pt-6 border-t border-slate-100">
+          <div className="flex justify-between items-center mt-12 pt-6 border-t border-gray-800">
             <button
               onClick={handleBack}
               disabled={currentStep === 0}
@@ -925,14 +931,14 @@ const OnBoarding = () => {
                 "flex items-center gap-2 px-6 py-3 rounded-2xl font-bold transition-all",
                 currentStep === 0
                   ? "opacity-0 cursor-default"
-                  : "text-slate-600 hover:text-slate-800 hover:bg-slate-100"
+                  : "text-gray-400 hover:text-white hover:bg-gray-800"
               )}
             >
               <ArrowLeft className="w-5 h-5" />
               <span>Back</span>
             </button>
 
-            <div className="text-xs text-slate-500">
+            <div className="text-xs text-gray-500">
               Step {currentStep + 1} of {STEPS.length}
             </div>
 
@@ -942,10 +948,10 @@ const OnBoarding = () => {
               className={cn(
                 "flex items-center gap-2 px-8 py-3 rounded-2xl font-bold transition-all group min-w-[140px] justify-center",
                 isSubmitting
-                  ? "bg-indigo-400 cursor-not-allowed"
+                  ? "bg-purple-400 cursor-not-allowed"
                   : Object.keys(errors).length > 0
-                    ? "bg-red-600 text-white hover:bg-red-700 hover:shadow-lg hover:shadow-red-100"
-                    : "bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-xl hover:shadow-indigo-100"
+                    ? "bg-red-600 text-white hover:bg-red-700 hover:shadow-lg hover:shadow-red-900/30"
+                    : "bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-xl hover:shadow-purple-900/30"
               )}
             >
               {isSubmitting ? (
@@ -972,13 +978,13 @@ const OnBoarding = () => {
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
-              className="mt-4 p-3 bg-red-50 border border-red-200 rounded-xl"
+              className="mt-4 p-3 bg-red-900/20 border border-red-800 rounded-xl"
             >
-              <div className="flex items-center gap-2 text-red-700 text-sm font-medium">
+              <div className="flex items-center gap-2 text-red-400 text-sm font-medium">
                 <AlertCircle className="w-4 h-4" />
                 <span>Please fix the following errors:</span>
               </div>
-              <ul className="mt-2 text-sm text-red-600 space-y-1 pl-6">
+              <ul className="mt-2 text-sm text-red-300 space-y-1 pl-6">
                 {Object.entries(errors).map(([field, message]) => (
                   <li key={field} className="list-disc">
                     {message}
@@ -996,11 +1002,11 @@ const OnBoarding = () => {
           transition={{ delay: 0.5 }}
           className="mt-8 flex flex-col items-center gap-3 text-center"
         >
-          <div className="flex items-center justify-center gap-2 text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">
+          <div className="flex items-center justify-center gap-2 text-gray-500 text-[10px] font-bold uppercase tracking-[0.2em]">
             <Sparkles className="w-3 h-3" />
             <span>AI-Powered Study Abroad Assistant</span>
           </div>
-          <p className="text-xs text-slate-500 max-w-md">
+          <p className="text-xs text-gray-500 max-w-md">
             Your data helps us provide personalized university recommendations and application guidance.
             All information is secure and confidential.
           </p>
