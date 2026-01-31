@@ -15,8 +15,18 @@ app.use(cors({
   origin: process.env.FRONTEND_URL,
   credentials: true
 }));
+
 app.use(express.json());
 app.use(cookieParser());
+
+app.get("/health", async (req, res) => {
+  try {
+    await prisma.$queryRaw`SELECT 1`; // simple check
+    res.json({ status: "ok" });
+  } catch (err) {
+    res.status(500).json({ status: "db_error", message: err.message });
+  }
+});
 app.use("/api", router);
 
 // Error handler middleware (must be last)
