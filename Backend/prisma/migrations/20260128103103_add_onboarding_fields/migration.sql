@@ -1,0 +1,15 @@
+-- AlterTable
+ALTER TABLE "users" ADD COLUMN     "budget" TEXT,
+ADD COLUMN     "educationLevel" TEXT,
+ADD COLUMN     "fieldOfStudy" TEXT,
+ADD COLUMN     "fundingPlan" TEXT,
+ADD COLUMN     "gpa" TEXT,
+ADD COLUMN     "graduationYear" INTEGER,
+ADD COLUMN     "greStatus" TEXT,
+ADD COLUMN     "intakeYear" INTEGER,
+ADD COLUMN     "intendedDegree" TEXT,
+ADD COLUMN     "major" TEXT,
+ADD COLUMN     "onboardingComplete" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "preferredCountries" TEXT,
+ADD COLUMN     "sopStatus" TEXT,
+ADD COLUMN     "testStatus" TEXT;

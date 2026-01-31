@@ -1,0 +1,128 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Users {
+  id                 Int      @id @default(autoincrement())
+  name               String
+  email              String   @unique
+  password           String
+  createdAt          DateTime @default(now())
+  
+  // Onboarding status
+  onboardingComplete Boolean  @default(false)
+  onboarding         Onboarding?
+  chatHistory        userChatHistory[]
+  
+  // University Relations - UPDATED
+  shortlisted        Shortlist[]
+  locked             Lock[]
+
+  @@map("users")
+}
+
+model Onboarding {
+  id                 Int      @id @default(autoincrement())
+  userId             Int      @unique
+  user               Users    @relation(fields: [userId], references: [id])
+
+  // Academic Background
+  educationLevel     String?
+  major              String?
+  graduationYear     Int?
+  gpa                Float?
+  
+  // Study Goal
+  intendedDegree     String?
+  fieldOfStudy       String?
+  intakeYear         Int?
+  preferredCountries String?
+  
+  // Budget
+  budget             Int?
+  fundingPlan        String?
+  
+  // Exams & Readiness
+  testStatus         String?
+  greStatus          String?
+  greScore           Int?
+  sopStatus          String?
+  
+  // AI Analysis & Scoring
+  profileScore       Int      @default(0)
+  profileAnalysis    String?
+  
+  // Legacy/JSON storage
+  universityRecommendations Json?
+
+  currentStage       Int      @default(1)
+
+  @@map("onboarding")
+}
+
+model userChatHistory {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  user      Users    @relation(fields: [userId], references: [id])
+  message    String
+  response   String
+  createdAt DateTime @default(now())
+
+  @@map("userChatHistory")
+}
+
+model University {
+  id        Int      @id @default(autoincrement())
+  name      String
+  location  String?
+  country   String?
+  ranking   Int?
+  minScore  Int?
+  fees      Int?
+  imageUrl  String?
+  source    String   @default("External")
+  officialWebsite String? 
+  description String? 
+  matchScore      Int?     
+  
+  // Relations - UPDATED
+  shortlistedBy    Shortlist[]
+  lockedBy         Lock[]
+
+  createdAt DateTime @default(now())
+
+  @@unique([name, country])
+  @@map("universities")
+}
+
+// NEW: Explicit Shortlist model
+model Shortlist {
+  userId        Int
+  universityId  Int
+  createdAt     DateTime @default(now())
+
+  user          Users      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  university    University @relation(fields: [universityId], references: [id], onDelete: Cascade)
+
+  @@id([userId, universityId])
+  @@map("shortlisted")
+}
+
+// NEW: Explicit Lock model
+model Lock {
+  userId        Int
+  universityId  Int
+  createdAt     DateTime @default(now())
+
+  user          Users      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  university    University @relation(fields: [universityId], references: [id], onDelete: Cascade)
+
+  @@id([userId, universityId])
+  @@map("locked")
+}
